@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coaches - Add</title>
+</head>
+<body bgcolor="#ff7f50">
+<h1>Add New Coaches</h1>
+<form action="/coach/insert" method="get">
+    Coach Name: <input name="coach_name" type="text"/>
+    Birthday: <input name="birthday" type="date"/>
+    <br/>
+    Team
+    <br/>
+    <%for(var i = 0; team_result.length > i; i++){%>
+    <input type="checkbox" name="team_name" value="<%=
+        team_result[i].team_name%>"><%=team_result[i].team_name%>
+    <br/>
+    <%} %>
+    <br/>
+    <input type="submit"/>
+</form>
+</body>
+</html>
+

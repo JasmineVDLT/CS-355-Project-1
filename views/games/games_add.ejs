@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Games - Add</title>
+</head>
+<body bgcolor="#ff7f50">
+<h1>Add New Games</h1>
+<form action="/games/insert" method="get">
+    Game Date: <input name="game_date" type="date"/>
+
+    Stadium Name : <input name="stadium_name" type="text"/>
+
+    <br/>
+    <br/>
+    Team
+    <br/>
+    <%for(var i = 0; team_result.length > i; i++){%>
+    <input type="checkbox" name="team_name" value="<%=
+        team_result[i].team_name%>"><%=team_result[i].team_name%>
+    <br/>
+    <%} %>
+    <br/>
+    <input type="submit"/>
+</form>
+</body>
+</html>

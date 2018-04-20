@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coaches - View All</title>
+</head>
+<body bgcolor="#ff7f50">
+<h1>Coaches</h1>
+<table border="5" bordercolor="white">
+    <tr>
+        <th>ID</th>
+        <th>Coach Name</th>
+        <th>Birthday</th>
+        <th>Team Name</th>
+    </tr>
+    <% for (var i = 0; i < coaches.length; i++) {%>
+    <tr>
+        <td><%= coaches[i].coach_id %></td>
+        <td><%= coaches[i].coach_name%></td>
+        <td><%= coaches[i].birthday%></td>
+        <td><%= coaches[i].team_name%></td>
+    </tr>
+    <%} %>
+</table>
+</body>
+</html>

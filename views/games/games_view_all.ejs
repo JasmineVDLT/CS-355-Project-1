@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Games - View All</title>
+</head>
+<body bgcolor="#ff7f50">
+<h1>Games</h1>
+<table border="5" bordercolor="white">
+    <tr>
+
+        <th>Game Date</th>
+        <th>Stadium Name</th>
+        <th>Team Name</th>
+    </tr>
+    <% for (var i = 0; i < games.length; i++) {%>
+    <tr>
+
+        <td><%= games[i].game_date%></td>
+        <td><%= games[i].stadium_name%></td>
+        <td><%= games[i].team_name%></td>
+    </tr>
+    <%} %>
+</table>
+</body>
+</html>

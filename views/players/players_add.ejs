@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Players - Add</title>
+</head>
+<body bgcolor="#ff7f50">
+<h1>Add New Players</h1>
+<form action="/players/insert" method="get">
+    <br/>
+    Jersey Number: <input name="jersey_number" type="number"/>
+    <br/>
+    First Name: <input name="first_name" type="text"/>
+    <br/>
+    Last Name: <input name="last_name" type="text"/>
+    <br/>
+    Position: <input name="position" type="text"/>
+    <br/>
+    Birthday: <input name="birthday" type="date"/>
+    <br/>
+    Team
+    <br/>
+    <%for(var i = 0; team_result.length > i; i++){%>
+        <input type="checkbox" name="team_name" value="<%=
+            team_result[i].team_name%>"><%=team_result[i].team_name%>
+    <br/>
+    <%} %>
+    <br/>
+    <input type="submit"/>
+</form>
+</body>
+</html>
