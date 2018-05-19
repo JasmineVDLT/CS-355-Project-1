@@ -41,6 +41,38 @@ router.get('/insert', function(req, res){
         }
     });
 });
+router.get('/edit', function(req, res){
+    coach_dal.getinfo(req.query.coach_id, function(err, result) {
+        if(err) { res.send(err); }
+        else {
+            res.render('coach/coachUpdate',
+                {coaches: result[0][0], coach_name: result[1][1],team_name: result[2],birthday:result[3]
+                   }
+            );
+        }
+    });
+});
 
+router.get('/delete', function(req, res) {
+    coach_dal.delete(req.query, function(err, result){
+        if(err) {
+            res.send(err);
+        }
+        else {
+            res.redirect(302, '/coach/all' + "?&was_successful_delete=1");
+        }
+    });
+});
+
+router.get('/update', function(req, res) {
+    coach_dal.update(req.query, function(err, result){
+        if(err) {
+            res.send(err);
+        }
+        else {
+            res.redirect(302, '/coach/all');
+        }
+    });
+});
 
 module.exports = router;

@@ -11,7 +11,8 @@ var stadium = require('./routes/stadium');
 var players = require('./routes/players');
 var team = require('./routes/team');
 var games = require('./routes/games');
-var coach = require('./routes/coach')
+var coach = require('./routes/coach');
+var SubQ = require('./routes/SubQ');
 var app = express();
 
 // view engine setup
@@ -33,6 +34,7 @@ app.use('/players', players);
 app.use('/team', team);
 app.use('/games', games);
 app.use('/coach', coach);
+app.use('/SubQ',SubQ);
 
 
 // catch 404 and forward to error handler

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,17 +6,36 @@
 </head>
 <body bgcolor="#ff7f50">
 <h1>Teams</h1>
+<a href= "/team/add">Add New team</a>
 <table border="5" bordercolor="white">
     <tr>
         <th>ID</th>
         <th>Team Name</th>
+        <th>Action</th>
+        <th>Actions</th>
     </tr>
     <% for (var i = 0; i < teams.length; i++) {%>
-    <tr>
-        <td><%= teams[i].team_id %></td>
-        <td><%= teams[i].team_name%></td>
+    <td><%= teams[i].team_id %></td>
+    <td><%= teams[i].team_name %></td>
+    <td>
+        <a href="/team/edit/?team_id=<%= teams[i].team_id %>">
+            Edit
+        </a>
+        </td>
+        <td>
+            <a href="/team/delete/?team_id=<%= teams[i].team_id %>">
+                Delete
+            </a>
+        </td>
     </tr>
     <%} %>
 </table>
+<% if(locals.was_successful_delete) { %>
+<div>
+    <p>You Successfully Deleted An Account!</p>
+</div>
+<% } %>
+
 </body>
 </html>
+

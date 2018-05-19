@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Games - Add</title>
+</head>
+<body>
+<h1>Edit Games</h1>
+<form action="/games/update" method="get">
+    game_date: <input
+            id="game_date"
+            name="game_date"
+            type="text"
+            value="<%= games.game_date%>"
+
+    />
+
+    start_time: <input
+            id="start_time"
+            name="start_time"
+            type="text"
+            value="<%= games.start_time%>"
+
+    />
+
+    stadium_id: <input
+            id="stadium_id"
+            name="stadium_id"
+            type="text"
+            value="<%= games.stadium_id%>"
+    />
+
+    team_name: <input
+            id="team_name"
+            name="team_name"
+            type="text"
+            value="<%= games.team_name%>"
+    />
+
+    <input type="hidden"
+           id="game_id"
+           name="game_id"
+           value="<%= games.game_id %>"
+    />
+
+    <input type="submit" />
+
+
+</form>
+
+</body>
+</html>
+

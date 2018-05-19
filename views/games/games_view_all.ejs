@@ -5,21 +5,39 @@
 </head>
 <body bgcolor="#ff7f50">
 <h1>Games</h1>
+<a href="/games/add">Add New Game</a>
 <table border="5" bordercolor="white">
     <tr>
 
         <th>Game Date</th>
-        <th>Stadium Name</th>
+        <th>Start Time</th>
+        <th>Stadium ID</th>
         <th>Team Name</th>
+        <th>Actions</th>
+        <th>Actions</th>
+
     </tr>
     <% for (var i = 0; i < games.length; i++) {%>
     <tr>
 
         <td><%= games[i].game_date%></td>
+        <td><%=games[i].start_time%></td>
         <td><%= games[i].stadium_name%></td>
         <td><%= games[i].team_name%></td>
+
+        <td>
+            <a href='/games/edit/?game_id=<%= games[i].game_id %>'>
+                Edit
+            </a>
+            <td>
+            <a href='/games/delete/?game_id=<%= games[i].game_id %>'>
+                Delete
+            </a>
+        </td>
+
     </tr>
     <%} %>
 </table>
 </body>
+
 </html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Sub Query Number 10</title>
+</head>
+<body>
+<h1>Sub Query Number 10</h1>
+<table border="3">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Birthday</th>
+        <th>Team Name</th>
+
+    </tr>
+
+    <% for (var i = 0; i < results.length; i++) {%><tr>
+
+        <td><%= results[i].first_name %></td>
+        <td><%= results[i].last_name %></td>
+        <td><%= results[i].birthday %></td>
+        <td><%= results[i].team_name %></td>
+        <%} %>
+    </tr>
+</table>
+</body>
+</html>

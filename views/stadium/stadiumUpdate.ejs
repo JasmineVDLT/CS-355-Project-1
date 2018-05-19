@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stadium - Edit</title>
+</head>
+<body>
+<h1>Stadium edit </h1>
+<form action="/stadium/update" method="get">
+    <input type="hidden"
+           id="stadium_id"
+           name="stadium_id"
+           value="<%= stadiums.stadium_id %>"
+    />
+    stadium_name: <input
+            id="stadium_name"
+            name="stadium_name"
+            type="text"
+            value="<%= stadiums.stadium_name%>"
+    />
+    street_name:<input
+            id="street_name"
+            name="street name"
+            type="text"
+            value="<%stadiums.street_name%>"
+    />
+    city:<input
+            id="city"
+            name="city"
+            type="text"
+            value="<%stadiums.city%>"
+    />
+    state:<input
+            id="state"
+            name="state"
+            type="text"
+            value="<%stadiums.state%>"
+    />
+    zip_code:<input
+            id="zip_code"
+            name="zip_code"
+            type="text"
+            value="<%stadiums.zip_code%>"
+    />
+
+    <br />
+    <input type="submit" />
+
+</form>
+
+</body>
+</html>

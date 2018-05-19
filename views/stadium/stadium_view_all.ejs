@@ -3,10 +3,10 @@
 <head>
     <title>Stadium - View All</title>
 </head>
-    <body bgcolor="#ff7f50">
-
-        <h1>Stadiums</h1>
-        <table border="5" bordercolor="white">
+<body bgcolor="#ff7f50">
+<h1>Stadiums</h1>
+<a href= "/stadium/add">Add New Stadium</a>
+    <table border="5" bordercolor="white">
 
             <tr>
                 <th>ID</th>
@@ -15,6 +15,8 @@
                 <th>City</th>
                 <th>State</th>
                 <th>Zip Code</th>
+                <th>Actions</th>
+                <th>Actions</th>
             </tr>
             <% for (var i = 0; i < stadiums.length; i++) {%>
             <tr>
@@ -24,8 +26,25 @@
                 <td><%= stadiums[i].city%></td>
                 <td><%= stadiums[i].state%></td>
                 <td><%= stadiums[i].zip_code%></td>
-            </tr>
-            <%} %>
-        </table>
+
+
+        <td>
+            <a href='/stadium/edit/?stadium_id=<%= stadiums[i].stadium_id %>'>
+                Edit
+            </a>
+        <td>
+
+            <a href='/stadium/delete/?stadium_id=<%= stadiums[i].stadium_id %>'>
+                Delete
+            </a>
+        </td>
+             </tr>
+        <%}%>
+    </table>
+<% if(locals.was_successful_delete) { %>
+<div>
+    <p>You Successfully Deleted A Coach!</p>
+</div>
+<%} %>
     </body>
 </html>

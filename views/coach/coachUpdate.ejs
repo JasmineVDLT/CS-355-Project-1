@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coach - Edit</title>
+</head>
+<body>
+<h1>Edit Coach</h1>
+<form action="/coach/update" method="get">
+    <input type="hidden"
+           id="player_id"
+           name="player_id"
+           value="<%= coaches.coach_id %>"
+    />
+    coach_name: <input
+            id="coach_name"
+            name="coach_name"
+            type="text"
+            value="<%= coaches.coach_name%>"
+    />
+    team_name:<input
+            id="team_name"
+            name="first name"
+            type="text"
+            value="<%coaches.team_name%>"
+    />
+    birthday:<input
+            id="birthday"
+            name="birthday"
+            type="text"
+            value="<%coaches.birthday%>"
+    />
+
+    <br />
+    <input type="submit" />
+
+</form>
+
+</body>
+</html>

@@ -5,21 +5,43 @@
 </head>
 <body bgcolor="#ff7f50">
 <h1>Coaches</h1>
+<a href="/coach/add">Add A New Coach</a>
 <table border="5" bordercolor="white">
     <tr>
         <th>ID</th>
         <th>Coach Name</th>
-        <th>Birthday</th>
+
         <th>Team Name</th>
+        <th>Birthday</th>
+        <th>Actions</th>
+        <th>Actions</th>
     </tr>
     <% for (var i = 0; i < coaches.length; i++) {%>
     <tr>
         <td><%= coaches[i].coach_id %></td>
+
         <td><%= coaches[i].coach_name%></td>
-        <td><%= coaches[i].birthday%></td>
         <td><%= coaches[i].team_name%></td>
+        <td><%= coaches[i].birthday%></td>
+
+
+    <td>
+        <a href='/coach/edit/?coach_id=<%= coaches[i].coach_id %>'>
+            Edit
+        </a>
+    <td>
+
+        <a href='/coach/delete/?coach_id=<%= coaches[i].coach_id %>'>
+            Delete
+        </a>
+    </td>
     </tr>
-    <%} %>
+    <%}%>
 </table>
+<% if(locals.was_successful_delete) { %>
+<div>
+    <p>You Successfully Deleted A Coach!</p>
+</div>
+<% } %>
 </body>
 </html>
